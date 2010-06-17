@@ -1,8 +1,8 @@
-class WindowsCPULoad < Scout::Plugin
+class WindowsAvailableMemory < Scout::Plugin
 
   def build_report
-    if `typeperf \"\\Processor(_Total)\\% Processor Time\" -sc 1` =~ /,\"(\d*\.\d*)\"\n/
-      report :usage => $1.to_f
+    if `typeperf \"\\Memory\\Available KBytes\" -sc 1` =~ /,\"(\d*\.\d*)\"\n/
+      report :available => $1.to_f
     else
       raise "Couldn't use `typepref` as expected."
     end
