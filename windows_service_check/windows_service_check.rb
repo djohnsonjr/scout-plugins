@@ -1,5 +1,4 @@
 class WindowsServiceCheck < Scout::Plugin
-class StarterPlugin < Scout::Plugin
   # An embedded YAML doc describing the options this plugin takes
   OPTIONS=<<-EOS
     service_to_monitor:
