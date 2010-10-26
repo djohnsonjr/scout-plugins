@@ -3,6 +3,8 @@ class WindowsCheckForFiles < Scout::Plugin
 	OPTIONS=<<-EOS
 		directory:
 			default: ~
+			name: Directory
+      notes: The directory in which to count files
 	EOS
 
   def build_report
