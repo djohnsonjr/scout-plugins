@@ -3,7 +3,7 @@ class WindowsServiceCheck < Scout::Plugin
 OPTIONS=<<-EOS
 service_to_monitor:
 	default: Idle
-	name: Service
+	label: Service
 	notes: The service to monitor
 EOS
 
