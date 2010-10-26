@@ -1,11 +1,11 @@
 class WindowsServiceCheck < Scout::Plugin
-
-OPTIONS=<<-EOS
-service_to_monitor:
-	default: Idle
-	label: Service
-	notes: The service to monitor
-EOS
+class StarterPlugin < Scout::Plugin
+  # An embedded YAML doc describing the options this plugin takes
+  OPTIONS=<<-EOS
+    service_to_monitor:
+      label: Service to Monitor
+      default: Idle
+  EOS
 
   def build_report
 		status = get_status
@@ -33,6 +33,4 @@ EOS
 	end
 
 end
-
-
 
