@@ -1,11 +1,11 @@
 class WindowsCheckForFiles < Scout::Plugin
 
-OPTIONS=<<-EOS
-directory:
-	default: ~
-	name: Directory
-	notes: The directory in which to count files
-EOS
+  # An embedded YAML doc describing the options this plugin takes
+  OPTIONS=<<-EOS
+    directory:
+      label: Directory to Monitor
+      default: ~
+  EOS
 
   def build_report
 		count = scan_directory
