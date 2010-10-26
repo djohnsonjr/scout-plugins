@@ -1,8 +1,8 @@
 class WindowsServiceCheck < Scout::Plugin
 
 OPTIONS=<<-EOS
-service:
-	default: ~
+service_to_monitor:
+	default: Idle
 	name: Service
 	notes: The service to monitor
 EOS
@@ -19,7 +19,7 @@ EOS
   end
 
 	def get_status
-    if results = `typeperf \"\\Process(#{option(:service)})\\Working Set\" -sc 1`
+    if results = `typeperf \"\\Process(#{option(:service_to_monitor)})\\Working Set\" -sc 1`
 			# good ends with The command completed successfully
 			# not running ends with Error:\nthe data is not valid
 			if results.match(/completed successfully/)
