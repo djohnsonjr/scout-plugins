@@ -7,8 +7,8 @@ class WindowsScriptRunner < Scout::Plugin
 
   # Basically, run a given bat file, expecting output like "Blah: 5"
   def build_report
-    if `#{option(:file_to_run)}` =~ /: \(\d*\)\n/
-      report 'count' => $1.to_f
+    if `#{option(:file_to_run)}` =~ /: (\d*)$/
+      report 'count' => $1.to_i
     else
       raise "Couldn't run `bat file` as expected."
     end
