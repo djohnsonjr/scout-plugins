@@ -1,1 +1,20 @@
-Misc Scout Plugins
+These are some basic Scout (https://scoutapp.com/) plugins for monitoring Windows systems.
+
+I have one Windows box that I have to monitor and I wanted it to happen on the same platform that we use for our Linux systems, which is Scout.  Scout makes it easy to drop in and configure your own monitoring add ins, see http://scoutapp.com/info/creating_a_plugin for more information on creating your own plugin.
+
+Most of the plugins that I have require that typeperf be installed on the Windows OS that you want to monitor.  I believe that it is part of the basic Windows XP installations.  I am not sure if it is in other Windows versions or not.
+
+Here's an overview of what I have put together:
+
+windows_available_memory - (no configuration options) This uses typeperf to check the memory use at that exact moment.  If you are familiar with Unix memory monitoring tools, this result is a little different because it is such a specific point in time and not averaged across a sampling.
+
+windows_cpu_load - (no configuration options).  This uses typeperf to check the total CPU load.
+
+windows_disk_usage - (no configuraiton options).  This uses typeperf to check the total disk usage (as a percentage) as well as the percent usage per disk.  So, if you have a C:\ and D:\ drive, you will see three results, one for C, one for D, and a total.
+
+windows_check_for_files - (configuration required to specify the directory that you want to monitor, eg: C:\input_folder).  This will count the files in the configured directory.
+
+windows_bat_runner - (configuration required to add the path and name of the file to run, eg: C:\bin_files\do_stuff.bat).  This will run the configured bat file, expecting an integer value in return.  I used this run more complicated logic or logic that needed to access configuration data in my application that I didn't want to expose in the script or my Scout configuration.
+
+windows_service_check - (configuration required to add the name of the service to monitor).  This returns either "yes" or "no" to indicate that the service is running or not.  This requires the name of the process (sans .exe) from the list of Windows processes, not the name of the service in the services panel.
+
