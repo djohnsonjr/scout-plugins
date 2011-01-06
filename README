@@ -2,6 +2,8 @@ These are some basic Scout (https://scoutapp.com/) plugins for monitoring Window
 
 I have one Windows box that I have to monitor and I wanted it to happen on the same platform that we use for our Linux systems, which is Scout.  Scout makes it easy to drop in and configure your own monitoring add ins, see http://scoutapp.com/info/creating_a_plugin for more information on creating your own plugin.
 
+For more information on monitoring a Windows server through Scout, see my blog post here: http://cookieoverflow.com/using-scout-to-monitor-windows
+
 Most of the plugins that I have require that typeperf be installed on the Windows OS that you want to monitor.  I believe that it is part of the basic Windows XP installations.  I am not sure if it is in other Windows versions or not.
 
 Here's an overview of what I have put together:
